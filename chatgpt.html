@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA - Discover More</title>
+
+    <style>
+        /* BASE RESET & TYPOGRAPHY */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #F4F7FB;
+            color: #101D36;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        header {
+            background-color: #101D36;
+            color: white;
+            padding: 18px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            color: #43D9BD;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul a {
+            color: white;
+        }
+
+        nav ul a:hover {
+            color: #43D9BD;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #43D9BD;
+            color: #101D36;
+            border: 1px solid #43D9BD;
+        }
+
+        /* Hover fix for all primary action buttons including "Get Involved" */
+        .btn-primary:hover {
+            background-color: #ffffff;
+            color: #101D36;
+            border-color: #ffffff;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #94A3B8;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .btn-dark {
+            background-color: #101D36;
+            color: white;
+            border: 1px solid #101D36;
+        }
+
+        .btn-dark:hover {
+            background-color: #263B68;
+            border-color: #263B68;
+            color: #ffffff;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: #101D36;
+            color: white;
+            padding: 70px 0;
+        }
+
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .tag {
+            color: #43D9BD;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin: 18px 0;
+        }
+
+        .hero h1 span {
+            color: #43D9BD;
+        }
+
+        .hero p {
+            color: #D5DCEC;
+            margin-bottom: 25px;
+            max-width: 500px;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .features h2,
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748B;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 22px;
+            text-align: left;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            flex: 1;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+        }
+
+        .icon {
+            background-color: #DDF9F2;
+            color: #087F70;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 48px;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #64748B;
+            font-size: 14px;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .visual {
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .visual-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            color: #64748B;
+            margin: 15px 0 25px;
+        }
+
+        /* CALL TO ACTION */
+        .cta {
+            background-color: #43D9BD;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+        }
+
+        .cta p {
+            margin: 10px 0 22px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #101D36;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            color: #CBD5E1;
+            font-size: 14px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-layout,
+            .cards,
+            .about-content {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-img,
+            .visual-img,
+            .visual {
+                width: 100%;
+                max-width: 100%;
+                height: 260px;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">NOVA<span>.</span></a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH RIGHT SIDE PICTURE -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-text">
+                    <span class="tag">DISCOVER SOMETHING NEW</span>
+                    <h1>
+                        A Better Future<br>
+                        <span>Starts Today.</span>
+                    </h1>
+                    <p>
+                        Explore new ideas, discover possibilities, and take the first step towards a brighter tomorrow. Together, we can make a difference.
+                    </p>
+                    <a href="#features" class="btn btn-primary">Explore More →</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Team collaborating" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <p class="subtitle">Simple ideas. Meaningful impact.</p>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">✦</div>
+                    <h3>Discover</h3>
+                    <p>Explore new ideas and understand their importance in everyday life.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">◎</div>
+                    <h3>Take Action</h3>
+                    <p>Learn practical solutions to challenges and create positive change.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">↗</div>
+                    <h3>Grow Together</h3>
+                    <p>Share knowledge, spread awareness, and build a better future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container about-content">
+            <div class="visual">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Collaboration" class="visual-img">
+            </div>
+
+            <div class="about-text">
+                <span class="tag">ABOUT THE TOPIC</span>
+                <h2>Why Does It Matter?</h2>
+                <p>
+                    Our world is constantly changing, and every challenge brings an opportunity to learn and improve. By spreading awareness and taking meaningful steps, we can contribute to a brighter and better future.
+                </p>
+                <a href="#contact" class="btn btn-primary">Get Involved →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Be Part of the Change!</h2>
+            <p>Start today. Learn more, take action, and inspire others.</p>
+            <a href="#home" class="btn btn-dark">Back to Top ↑</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#home" class="logo">NOVA<span>.</span></a>
+        <p>Learning Today. Leading Tomorrow.</p>
+        <p>© 2026 NOVA. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
